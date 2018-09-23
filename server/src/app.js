@@ -9,9 +9,9 @@ app.use(bodyParser.json());
 app.use(cors());
 const port = process.env.PORT || 3000;
 
-app.get('/status', (req, res)=>{
+app.post('/register', (req, res)=>{
     res.send({
-        message: "Hello World"
+        message: "Hello "+ req.body.email +" World"
     });
 });
 
@@ -19,5 +19,5 @@ app.get('/status', (req, res)=>{
 
 
 app.listen(port, () => {
-    console.log(`App listening on port ${3000}!`);
+    console.log(`App listening on port ${port}!`);
 });
